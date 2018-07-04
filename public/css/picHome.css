@@ -1,0 +1,240 @@
+
+/*common*/
+ul,li{margin:0;padding:0}
+.light{
+    color: #edf6ff;
+}
+/*header*/
+.logo_position{
+    margin-top: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.guide{
+    background-color: #222222;
+    color: #e2e2e2;
+    height: auto;
+}
+.use>button{
+    margin-top: 10px;
+    margin-right: 20px;
+    background-color: #222222;
+    color: #e2e2e2;
+}
+.userName{
+    margin: auto 5px;
+}
+/*content*/
+.content{
+    margin-top: 17px;
+}
+/*********************************左侧菜单栏控制*****************************/
+.category{
+    margin-top: 33px;
+    padding-right: 0px;
+    padding-left: 0px;
+    height:1200px ;
+    background-color:rgb(29,41,57);
+    color: #e2e2e2;
+}
+.leftNav>li>a{
+    padding-left: 45px;
+    color:  #edf6ff;
+}
+.leftNav>li>a:hover{
+    background-color: rgb(28,175,154);
+    color:#e2e2e2 ;
+}
+.leftNav>li>a:focus{
+    background-color: #e2e2e2;
+    color:rgb(28,175,154) ;
+}
+.leftMenu{
+    list-style-type: none;
+}
+/*******************************右侧内容设置******************************/
+.showReport{
+    margin-bottom: 20px;
+}
+.title{
+    height: 80px;
+    margin-top: 36px;
+    background-color: rgb(239,243,243);
+    color: rgb(28,175,154);
+}
+.title>h1{
+    margin-left: 20px;
+}
+.chatbox{
+    width: 250px;
+    height: 150px;
+    margin-top: 40px;
+    background-color: rgb(239,243,243);
+    border-radius:5px
+}
+.chat>img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.chat>h5{
+    margin-top:40px;
+    margin-left: 10px;
+}
+.data-right {
+    margin-left: 5px;
+    color: #1991D6;
+    font-size: 1.4vw;
+    cursor: pointer;
+}
+.img>img{
+    margin-top:40px;
+}
+
+.downLi{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    color:rgb(28,175,154);
+    padding-left: 45px;
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.downLi:hover{
+    background-color: rgb(239,243,243);
+    color: rgb(28,175,154);
+}
+.selectInfo{
+    height: 32px;
+    background-color: rgb(29,41,57);
+    color: rgb(33, 255, 233);
+    padding-left: 7px;
+    padding-top: 5px;
+}
+.screen-box {
+    height: 22px;
+    margin-top: 30px;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.screen-box a {
+    background: #b3b3b3 none repeat scroll 0 0;
+    font-size: 12px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 18px 0 0;
+    text-align: center;
+    width: 80px;
+}
+
+.screen-box a.search-btn {
+    background: rgb(136, 202, 215) none repeat scroll 0 0;
+    margin: 0;
+}
+
+.dataTable{
+    margin-top: 60px;
+}
+
+/*改*/
+.form-control-feedback {
+    left: 0;
+    right: 100%;
+}
+.aInput{
+    padding-right: 0px;
+}
+.aInput input{
+    display: block;
+    height: 34px;
+    padding-left: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14px;
+    width: 100%;
+    line-height: 1.42857143;
+    border-top:solid 2px rgb(28,175,154);
+    border-bottom: solid 2px rgb(28,175,154);
+    border-left-width:0px ;
+    border-right:solid 1px rgb(28,175,154);
+    background-color:rgb(29,41,57) ;
+    box-shadow: inset 0 3px 0px rgba(0, 0, 0, .075);
+    color: #e2e2e2 ;
+
+}
+.aInput input:focus {
+    background-color: rgb(28,175,154);
+    border-top:solid 3px rgb(239,243,243);
+    border-bottom: solid 3px rgb(239,243,243);
+}
+.aI{
+    border-radius: 4px;
+    background-color:rgb(29,41,57);
+    border:solid 3px rgb(28,175,154);
+    border-left-width: 0px;
+    border-right-width: 2px;
+    padding-top: 5px;
+    padding-left: 7px;
+    color:#edf6ff ;
+    top: 0px;
+    height: 34px;
+}
+.leftI{
+    left: 0px;
+}
+.chooseButton{
+    border-radius: 0px;
+    background-color:rgb(29,41,57);
+    border:solid 3px #B3D6EF;
+    border-left-width: 2px;
+    color:#edf6ff ;
+    top: 0px;
+
+}
+.subMenu{
+    height: 150px;
+    overflow-y: auto;
+}
+.manufactTh{
+    min-width: 190px;
+}
+.pacTh{
+    overflow:hidden;
+    white-space:nowrap;
+    min-width:100px;
+}
+.productTh{
+    min-width: 50px;
+}
+.oralTh{
+    min-width: 50px;
+}
+
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #edf6ff;
+    opacity:1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #edf6ff;
+    opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #edf6ff;
+    opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #edf6ff;
+    opacity:1;
+}
+/*footer*/

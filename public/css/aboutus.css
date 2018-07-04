@@ -1,0 +1,29 @@
+body{
+    background-image: url(../images/aboutus_bg.jpg);
+    /* 背景图垂直、水平均居中 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+}
+
+h1{
+    font-family: "Microsoft Sans Serif";
+    color: #ffffff;
+    line-height: 1;
+    margin-top: 100px;
+    margin-left: 100px;
+    font-size:54px;
+}
+
+.main{
+    font-family:"Microsoft Sans Serif";
+    color: #333333;
+    width:50%;
+    margin-left: 100px;
+    font-size:24px;
+}
+
+

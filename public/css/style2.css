@@ -1,0 +1,703 @@
+*,html,body {
+	font-family: '微软雅黑';
+}
+/* html{overflow: hidden;} height: 100%;*/
+html,body{overflow: hidden;}
+
+@media only screen and (min-width: 1366px) {/*大于1366px*/
+	.mCustomScrollbar{height:1000px; overflow: auto;}
+	.imgcontent{height: 600px;}
+}
+@media only screen and (max-width: 1366px) {/*小于1366px*/
+	.mCustomScrollbar{height:678px; overflow: auto;}
+	.imgcontent{height: 650px;}
+}
+@media only screen and (max-width: 1024px) {/*小于1024px*/
+	.mCustomScrollbar{height:668px; overflow: auto;}
+	.topfourwidth{padding: 0}
+	.imgcontent{height: 600px;}
+}
+
+.container-fluid{
+	padding-right: 0;
+	padding-left: 0;
+}
+/*报告也的表格样式*/
+.tableHead1{
+	background-color: #C24B51/* #4E67C8 */;
+	color: #FFFFFF;
+
+}
+.tableHead2{
+	background-color: #DF8A68/* #95A4DE */;
+	color: #FFFFFF;
+}
+.trood{background-color: #EBDDA8/* #D0D3EB */;}
+.treven{background-color: #ECCA95/* #E9EBF5 */;}
+/*显示TopFour加载图*/
+.topFourLoad{
+	position: absolute;
+	top: 40%;
+	left: 47%;
+	filter:alpha(opacity=85);
+	-moz-opacity:0.85;
+	-khtml-opacity: 0.85;
+	opacity: 0.85;
+	display: block;
+}
+.loadNone{
+	display: none;
+}
+/*显示导出Excel的加载图*/
+.excelDataLoad{
+	position: absolute;
+	z-index:9999;
+	left: 0;
+	top: 0;
+	width:100%;
+	height:100%;
+	padding-top:45%;
+	background-color:#F3F3F3;
+	filter:alpha(opacity=55);
+	-moz-opacity:0.55;
+	-khtml-opacity: 0.55;
+	opacity: 0.55;
+	display: block;
+}
+
+.selectWidth{width: 90%;display: none;}
+.selectul{max-height: 200px; overflow-y: auto;}
+/*首页顶部开始*/
+.hoemTop {
+	background: rgb(245, 245, 245);
+}
+/* [class*="col-"]{
+	border: 1px solid red;
+} */
+.language-box {
+	margin-top: 12px;
+	height: 59px;
+} /*float:right;*/
+.language-box button {
+	background: #a2b1b0;
+	height: 59px;
+	font-weight: bold;
+	color: #F2F2F2;
+}
+
+.language-box button:hover {
+	background: #1991d6;
+	color: #F2F2F2;
+}
+
+.drop-down {
+	width: auto !important;
+	width: 145px;
+	min-width: 145px;
+	height: auto !important;
+	height: 76px;
+	min-height: 76px;
+	border: 1px solid #666;
+}
+
+.manager-text {
+	padding: 4px 6px;
+	height: auto !important;
+	height: 56px;
+	min-height: 56px;
+	background: #b3b3b3;
+	border-bottom: 1px solid #666;
+}
+
+.manager-text span {
+	font-size: 22px;
+	color: #fff;
+}
+
+.manager-text p {
+	font-size: 16px;
+	color: #fff;
+}
+
+.language-box .personal-text {
+	height: 19px;
+	background: #e6e6e6;
+}
+
+.language-box .personal-text a {
+	width: 70px;
+	background: #e6e6e6;
+	height: 19px;
+	line-height: 19px;
+	float: left;
+	margin: 0;
+	font-size: 14px;
+	color: #000;
+	font-weight: normal;
+}
+
+.language-box .personal-text a:hover {
+	background: none;
+	color: #343434;
+}
+
+.language-box .personal-text a.border-left {
+	border-right: 1px solid #666;
+}
+
+/*首页顶部结束*/
+
+/*中间部分开始*/
+.title-box {
+	height: 80px;
+	line-height: 80px;
+	font-size: 42pt;
+	text-align: center;
+}
+
+.search-wrap {
+	width: 1192px;
+	height: 56px;
+	border: 1px solid #b3b3b3;
+	margin: 0 auto;
+}
+
+.search-ico {
+	width: 39px;
+	height: 40px;
+	background: url(../images/search-ico.gif) no-repeat;
+	display: block;
+	float: left;
+	margin: 12px 0 0 15px;
+}
+
+.input-text {
+	float: left;
+	width: 94%;
+	height: 54px;
+	margin: 0 0 0 15px;
+	font-size: 38px;
+	line-height: 56px;
+	color: #f5f5f5;
+	background: none;
+	border: 0;
+}
+
+.table-responsive table tr td a:hover {
+	filter: alpha(opacity = 96);
+	opacity: 0.96;
+}
+/*中间部分结束*/
+
+/*首页尾部开始*/
+.footer-wrap {
+	height: 50px;
+	border-top: 1px solid #a2b1b0;
+	background: #f2f2f2;
+} /*width:100%; height:60px; margin:0;  #f2f2f2*/
+.footer-box {
+	width: 230px;
+	height: 50px;
+	margin: 0 20px 0 0;
+	line-height: 50px;
+	float: right;
+}
+
+.footer-boxlogo {
+	height: 50px;
+	line-height: 500px;
+}
+
+.footer-boxlogo a {
+	line-height: 50px;
+	color: #808080;
+	font-size: 14px;
+}
+
+.footer-boxlogo a:link, a:hover, a:active {
+	text-decoration: none;
+	color: #a2a1a1;
+}
+
+.footer-box a {
+	line-height: 50px;
+	margin: 0 10px;
+	color: #fefefd;
+	font-size: 14px;
+}
+
+.footer-box a:hover {
+	color: #a2a1a1;
+	text-decoration: none;
+}
+/* 首页尾部结束*/
+/*首页部分结束*/
+
+/*其他页面尾部开始*/
+.footer2-wrap {
+	height: 60px;
+	border-top: 1px solid #a2b1b0;
+	background: rgb(189, 189, 189);/* #f2f2f2 */
+} /*width:100%; height:60px; margin:0;  #f2f2f2*/
+.footer2-box {
+	width: 230px;
+	height: 60px;
+	margin: 0 20px 0 0;
+	line-height: 60px;
+	float: right;
+}
+
+.footer2-boxlogo {
+	height: 60px;
+	line-height: 60px;
+}
+
+.footer2-boxlogo a {
+	line-height: 60px;
+	color: #fefefd;
+	font-size: 14px;
+}
+
+.footer2-boxlogo a:link, a:hover, a:active {
+	text-decoration: none;
+	color: #fefefd;
+}
+
+.footer2-box a {
+	line-height: 60px;
+	margin: 0 10px;
+	color: #808080;
+	font-size: 14px;
+}
+
+.footer2-box a:hover {
+	color: #a2a1a1;
+	text-decoration: none;
+}
+/* 其他页面尾部结束*/
+
+/******************************************************我是分割线*****************************************************************/
+/*左侧开始*/
+.main-left {
+	padding: 15px 5px 15px 5px;
+}
+
+.comment-box {
+	background: #fff;
+	padding: 10px 10px 8px;
+}
+
+.textarea-input {
+	background: url(../images/comm-ico.gif) no-repeat 6px 6px;
+	text-indent: 20px;
+	border: 0;
+	line-height: 22px;
+	resize: none;
+	color: #ccc;
+	font-size: 14px;
+}
+
+.box-wrap {
+	height: 36px;
+	margin: 25px 0 0 0;
+}
+
+.box-wrap2 {
+	min-height: 70px;
+	margin: 25px 0 0 0;
+}
+
+.title-select button {
+	background: #f5f5f5;
+}
+
+.title-select div, .title-select div ul {
+	background: #f2efef;
+}
+
+.title-select button span {
+	color: #999;
+}
+
+.time {
+	color: #999;
+}
+
+.screen-box {
+	height: 22px;
+	margin: 24px 0 35px 0;
+	width: 100%;
+}
+
+.screen-box a {
+	background: #b3b3b3 none repeat scroll 0 0;
+	font-size: 12px;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	color: #fff;
+	display: block;
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	margin: 0 18px 0 0;
+	text-align: center;
+	width: 80px;
+}
+
+.screen-box a.search-btn {
+	background: rgb(136, 202, 215) none repeat scroll 0 0;
+	margin: 0;
+}
+
+.comment-submit {
+	width: 100%;
+	height: 21px;
+	margin: 10px 0 0 0;
+	text-align: right;
+}
+
+.comment-submit a {
+	width: 54px;
+	height: 21px;
+	display: inline-block;
+	background: #b3b3b3;
+	border-radius: 3px;
+	text-align: center;
+	color: #fff;
+	line-height: 21px;
+	margin: 0 4px;
+}
+
+.comment-submit a:hover {
+	filter: alpha(opacity = 80);
+	opacity: 0.8;
+}
+
+.comment-submit a.keep-btn {
+	background: #1991d6;
+}
+
+.selectContent{
+	height: 200px;
+	position: relative;
+	z-index: 555;
+	overflow:auto;
+	background-color:#FFFFFF;
+	border: 1px solid black;
+	border-radius:5px;
+	display: none;
+}
+.selectContent ul, li {list-style-type: none; margin: 0; }/*padding: 5px;*/
+.selectContent li:HOVER{background-color: #CCCCCC; border-radius:5px; cursor: pointer;}
+/*左侧结束*/
+
+/******************************************************我是分割线*****************************************************************/
+/*页面1开始*/
+/*页面1头部开始*/
+.header-title {
+	color: #999;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	padding: 8px 0 0 0px;
+}
+/*页面1头部结束*/
+/*页面1右侧开始*/
+.screening-results {
+	font-size: 24px;
+	height: 35px;
+	line-height: 35px;
+	color: #999;
+}
+
+@media only screen and (min-width: 1366px) {
+	.data-summary-box {
+		width: 100%;
+		height: 185px;;
+		background: #f5f5f5;
+		border-right: 2px solid #b3b3b3;
+		border-bottom: 2px solid #b3b3b3;
+	}
+}
+@media only screen and (max-width: 1366px) {
+	.data-summary-box {
+		width: 100%;
+		height: 130px;;
+		background: #f5f5f5;
+		border-right: 2px solid #b3b3b3;
+		border-bottom: 2px solid #b3b3b3;
+	}
+}
+
+
+
+.summary-pictrue {
+	padding: 5px 0 0 10px;
+}
+
+.summary-text {
+	padding: 5px 0 0 30px;
+}
+
+.scree-left {
+	font-size: 1vw;
+	color: #808080;
+	margin: 0 0 0 0;
+}
+
+
+.brief-introduction {
+	padding: 28px;
+	background: rgb(230, 230, 230);
+	border-right: 2px solid rgb(220, 220, 220);
+	border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.brief-text {
+	height: auto !important;
+	height: 50px;
+	min-height: 50px;
+}
+
+.brief-text p {
+	text-indent: 20px;
+}
+
+.brief-text span, .brief-text p {
+	color: #808080;
+	font-size: 16px;
+}
+/* .brief-picture { margin:20px 0 0 0; } */
+.brief-picture img {
+	width: 100%;
+	/* 	height: 100%; */
+}
+
+.reveal-box {
+	height: 140px;
+	float: right;
+	*margin-top: 80px;
+}
+
+.reveal-center {
+	width: 155px;
+	height: 140px;
+	float: left;
+	text-align: center;
+}
+
+.reveal-center a:hover {
+	filter: alpha(opacity = 86);
+	opacity: 0.86;
+}
+/* .reveal-picture { width:155px; height:92px; background:pink; } */
+/* .reveal-text { width:155px; height:30px; line-height:30px; margin:10px 0 0 0; text-align:center; } */
+/* .reveal-text a { font-size:22px; color:#999; } */
+.footer {
+	width: 100%;
+	height: 50px;
+	background: #F2F2F2;
+	float: left;
+	border-top: 1px solid #A2B1B0;
+}
+
+.footer-text {
+	width: 240px;
+	height: 50px;
+	line-height: 50px;
+	float: right;
+	margin: 0 20px 0 0;
+}
+
+.footer-text a {
+	font-size: 18px;
+	margin: 0 20px;
+	color: rgb(245, 245, 245);
+}
+
+.footer-text a:hover {
+	color: rgb(245, 245, 245);
+}
+
+/**页面1右侧结束*/
+/*页面1结束*/
+
+/******************************************************我是分割线*****************************************************************/
+/*页面2开始*/
+/*页面2右侧开始*/
+.thtext-center>thead>tr>th, .thtext-center>tbody>tr>th, .thtext-center>tfoot>tr>th
+{
+	text-align: center;
+	padding: 15px;
+	background: #999 none repeat scroll 0 0;
+	border-right: 1px solid rgb(245, 245, 245);
+	color: #fff;
+}
+
+.thtext-center>thead>tr>td, .thtext-center>tbody>tr>td, .thtext-center>tfoot>tr>td
+{
+	cursor: pointer;
+	text-align: center;
+	color: #999;
+}
+
+.more-box {
+	float: left;
+	height: 31px;
+	width: 62px;
+}
+
+.more-btn {
+	background: rgba(0, 0, 0, 0) url("../images/triangle-bg.png") no-repeat
+	scroll 0 0;
+	color: #fff;
+	display: block;
+	height: 31px;
+	line-height: 20px;
+	text-align: center;
+	width: 62px;
+}
+
+.more-btn:hover {
+	color: #f2f2f2;
+}
+
+.presentation-right {
+	float: right;
+	height: 30px;
+	width: 300px;
+	margin: 11px 0 0 0;
+}
+
+.presentation-right a {
+	background: #1991d6 none repeat scroll 0 0;
+	border: 1px solid #86a4b6;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	float: left;
+	font-size: 14px;
+	height: 28px;
+	line-height: 28px;
+	margin: 0 0 0 42px;
+	text-align: center;
+	width: 105px;
+}
+/*页面2右侧开结束
+/*页面2结束*/
+
+/*页面3开始*/
+/*页面3右侧开始*/
+.market-report {
+	border: 2px solid #999;
+	/*     height: auto !important; */
+	height: 585px;
+	margin: 10px 0 0 0;
+	min-height: 400px;
+	padding: 10px 18px 10px 7px;
+	width: 100%;
+	overflow: auto;
+}
+
+/* .market-report p {
+	color: #666;
+	font-size: 18px;
+	text-indent: 20px;
+} */
+
+.pic {
+	float: right;
+	padding: 0 0 10px 10px;
+}
+/*页面3右侧结束*/
+/*页面3结束*/
+
+/*翻转特效CSS开始 有部分是没有用的暂时先放着*/
+.artGroup {
+	display: block;
+	position: relative;
+}
+
+.artwork {
+	display: block;
+	/* 	width: 100%; */
+	/* 	height: 100%; */
+}
+/* .artGroup img { */
+/* 	width: 100%; */
+/* 	height: 100%; */
+/* 	position: absolute; */
+/* 	display: block; */
+/* } #B7C3FE*/
+
+/*翻转特效后的文字的top*/
+.modelTop{
+	padding: 2em 0 1em 1em;
+	font-weight: bold;
+	color: #FFC100;
+}
+
+.artGroup .detail {
+	display: block;
+	background: #0E89A1; /*#B7D5D5   #B9DEE6*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border: 1px dotted #ccc;
+	color: #FFFFFF;/*#777777*/
+	border-radius: 6px;
+	margin: 0;
+	padding: 0;
+}
+
+.artGroup .detail p {
+	font: 200 14px/1.2 Raleway, "Microsoft YaHei", Dosis, sans-serif;
+	text-align: left;
+	padding: 0 0 0.8em 2em;
+	font-weight: bold;
+}
+
+.fontCon>a{
+	color: #fff
+}
+
+article {
+	clear: both;
+	font: 300 15px/1.2 Raleway, "Microsoft YaHei", Dosis, sans-serif;
+	/* 	margin: 2em auto; */
+	/* 	max-width: 600px; */
+}
+
+/* Older Browsers */
+.artGroup.slide {
+	overflow: hidden;
+}
+
+.artGroup.slide .detail {
+	bottom: -364px;
+}
+
+/* Newer Browsers */
+.artGroup.flip {
+	-webkit-perspective: 800px;
+	perspective: 800px;
+}
+
+.artGroup.flip .artwork {
+	-webkit-transition: -webkit-transform 1s ease;
+	transition: transform 1s ease;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.artGroup.flip .detail, .artGroup.flip .theFlip {
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+.artGroup.flip img, .artGroup.flip .detail {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/*翻转特效CSS结束*/

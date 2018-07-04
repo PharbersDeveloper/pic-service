@@ -1,0 +1,48 @@
+body{
+    background-image: url(../images/contactus_bg.jpg);
+    /* 背景图垂直、水平均居中 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+    background-attachment: fixed;
+    /* 让背景图基于容器大小伸缩 */
+    background-size: cover;
+    /* 设置字体默认大小 */
+    font-size:24px;
+    text-align: center;
+}
+
+.top{
+    position: absolute;
+    top: 100px;
+    width:98%;
+}
+
+.below{
+    position: absolute;
+    bottom: 10px;
+    width:98%;
+}
+
+.title{
+    font-family: "Times New Roman", Times, serif;
+    font-size:32px;
+    color:#333333;
+    line-height: 50px;
+}
+
+.en,
+.number{
+    font-size:20px;
+}
+
+.end{
+    line-height:3;
+}
+
+#logo{
+    width:81px;
+    height:81px;
+    margin:0px auto;
+    background-image: url(../images/logo.png);
+}

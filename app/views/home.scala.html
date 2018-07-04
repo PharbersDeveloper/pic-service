@@ -1,0 +1,427 @@
+@main("PIC") {
+    <!--css-->
+
+
+    <link href="@routes.Assets.at("css/bootstrap/css/bootstrap-datetimepicker.min.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/flavr/animate.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/flavr/flavr.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/font-awesome-4.7.0/css/font-awesome.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/picHome.css")" rel="stylesheet">
+
+        <!--JS-->
+    <script src="@routes.Assets.at("js/html5media.min.js")"></script>
+    <script src="@routes.Assets.at("js/jquery.easing.min.js")"></script>
+    <script src="@routes.Assets.at("js/modernizr.min.js")"></script>
+    <script src="@routes.Assets.at("js/flavr/flavr.min.js")"></script>
+    <script src="@routes.Assets.at("js/lhgdialog/lhgdialog.min.js")"></script>
+    <script src="@routes.Assets.at("js/jQueryScrollBar/jquery.mousewheel.min.js")"></script>
+    <script src="@routes.Assets.at("js/jQueryScrollBar/jquery.mCustomScrollbar.js")"></script>
+    <script src="@routes.Assets.at("js/jQueryUI1.10/jquery-ui-1.10.4.min.js")"></script>
+    <!--<script src="@routes.Assets.at("../../public/js/eachars/echarts.js")"></script>
+    <script src="@routes.Assets.at("../../public/js/eachars/map/china.js")"></script>-->
+    <script src="@routes.Assets.at("js/accounting.min.js")"></script>
+    <script src="@routes.Assets.at("js/flavr/flavr.min.js")"></script>
+
+} {
+    <div class="header row">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <nav class="navbar navbar-inverse navbar-fixed-top">
+                        <div class="container-fluizd">
+                            <div class="navbar-header">
+                                <img class="logo_position" alt="回首页" title="回首页" onclick="goHome()" src="@routes.Assets.at("images/logo.png")">
+                            </div>
+
+                            <ul class="nav navbar-nav">
+                                <a class="navbar-brand" href="#">法伯科技</a>
+                            </ul>
+
+                            <ol class="nav navbar-nav navbar-right  guide">
+                                <li><a href="#">PIC</a></li>
+                                <li><a>/</a></li>
+                                <li >
+                                    <a href="/data/report" ><i class="glyphicon glyphicon-home light "></i><span class="light">首页</span></a>
+                                </li>
+                            </ol>
+                            <div class=" btn-group navbar-right use">
+                                <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="@routes.Assets.at("images/userImage.jpg")"  class="img-circle">
+                                    <span class="userName">用户名</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/userInfo" target="_blank" >个人资料</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#" onclick="logoutSys()">退出</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="col-sm-6 col-md-2 sidebar category">
+            <div class="time">
+                <input type="hidden" id="timeType" value="1"/>
+                <ul id="timeTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active fontCon"><a id="tabYear" href="#year" aria-controls="year" role="tab" data-toggle="tab">
+                        年</a></li>
+                    <li role="presentation" class="fontCon"><a id="tabMonth" href="#month" aria-controls="month" role="tab" data-toggle="tab">
+                        月</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="year">
+                        <div class="form-group" style="margin: 0;">
+                            <div class="input-group date timepk_year" data-date="" data-link-field="dtp_input2">
+                                <input class="form-control time" style="background-color:#ffffff" id="yearInputb" size="16" type="text" value="" readonly placeholder="截止时间">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="month">
+                        <div class="form-group" style="margin: 0;">
+                            <div class="input-group date timepk_month" data-date="" data-link-field="dtp_input2">
+                                <input class="form-control time" style="background-color: #fff" id="monthInputb" size="16" type="text" value="" readonly placeholder="截止时间">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<ul class="nav nav-sidebar leftNav ">
+                    <li id="atc1">
+                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;治疗I<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="atc1_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="atc2">
+                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;治疗II<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="atc2_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="atc3">
+                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;治疗III<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="atc3_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="genericnameinfo">
+                        <a href="#"><i class="glyphicon glyphicon-subscript"></i>&nbsp;通用名<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="genericnameinfo_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="product">
+                        <a href="#"><i class="glyphicon glyphicon-th"></i>&nbsp;商品名<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="product_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="province">
+                        <a href="#"><i class="glyphicon glyphicon-globe"></i>&nbsp;区域<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="province_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="manufacture">
+                        <a href="#"><i class="glyphicon glyphicon-wrench"></i>&nbsp;生产厂家<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="manufacture_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="manufacturetype">
+                        <a href="#"><i class="glyphicon glyphicon-tags"></i>&nbsp;生产厂商类型<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="manufacturetype_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="dosage">
+                        <a href="#"><i class="glyphicon glyphicon-book"></i>&nbsp;剂型<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="dosage_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="specification">
+                        <a href="#"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;规格<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="specification_ul" class="leftMenu"></ul>
+                    </li>
+                    <li id="package">
+                        <a href="#"><i class="glyphicon glyphicon-lock"></i>&nbsp;包装<i class="fa fa-angle-down change" aria-hidden="true"></i></a>
+                        <ul id="package_ul" class="leftMenu"></ul>
+                    </li>
+                </ul>-->
+                <ul class="nav nav-sidebar leftNav ">
+                    <li id="atc1">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-briefcase form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="atc1_input"  placeholder="治疗I" onclick="inputClick('atc1')">
+                                </div>
+                                <div id="atc1_button" class="aI col-xs-1" onclick="buttonClick($(this),'atc1')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="atc1_div">
+                            <ul id="atc1_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="atc2">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-briefcase form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="atc2_input"  placeholder="治疗II" onclick="inputClick('atc2')">
+                                </div>
+                                <div id="atc2_button" class="aI col-xs-1" onclick="buttonClick($(this),'atc2')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="atc2_div">
+                            <ul id="atc2_ul" class="leftMenu ">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="atc3">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-briefcase form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="atc3_input"  placeholder="治疗III" onclick="inputClick('atc3')">
+                                </div>
+                                <div id="atc3_button" class="aI col-xs-1" onclick="buttonClick($(this),'atc3')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="atc3_div">
+                            <ul id="atc3_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="oral_name">
+                        <div class=" has-feedback ">
+                            <i class="glyphicon glyphicon-subscript form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="oral_name_input"  placeholder="通用名" onclick="inputClick('oral_name')">
+                                </div>
+                                <div id="oral_name_button" class="aI col-xs-1" onclick="buttonClick($(this),'oral_name')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="oral_name_div">
+                            <ul id="oral_name_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="product_name">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-th form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="product_name_input"  placeholder="商品名" onclick="inputClick('product_name')">
+                                </div>
+                                <div id="product_name_button" class="aI col-xs-1" onclick="buttonClick($(this),'product_name')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="product_name_div">
+                            <ul id="product_name_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="edge">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-globe form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="edge_input"  placeholder="区域" onclick="inputClick('edge')">
+                                </div>
+                                <div id="edge_button" class="aI col-xs-1" onclick="buttonClick($(this),'edge')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="edge_div">
+                            <ul id="edge_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="manufacture_name">
+                        <div class=" has-feedback ">
+                            <i class="glyphicon glyphicon-wrench form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="manufacture_name_input"  placeholder="生产厂家" onclick="inputClick('manufacture_name')">
+                                </div>
+                                <div id="manufacture_name_button" class="aI col-xs-1" onclick="buttonClick($(this),'manufacture_name')"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="manufacture_name_div">
+                            <ul id="manufacture_name_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="manufacture_type">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-tags form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="manufacture_type_input"  placeholder="生产厂商类型" onclick="inputClick('manufacture_type')">
+                                </div>
+                                <div id="manufacture_type_button" class="aI col-xs-1" onclick="buttonClick($(this),'manufacture_type')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="manufacture_type_div">
+                            <ul id="manufacture_type_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="product_type">
+                        <div class=" has-feedback ">
+                            <i class="glyphicon glyphicon-book form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="product_type_input"  placeholder="剂型" onclick="inputClick('product_type')">
+                                </div>
+                                <div id="product_type_button" class="aI col-xs-1" onclick="buttonClick($(this),'product_type')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="product_type_div">
+                            <ul id="product_type_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="specifications">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-info-sign form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="specifications_input"  placeholder="规格" onclick="inputClick('specifications')">
+                                </div>
+                                <div id="specifications_button" class="aI col-xs-1" onclick="buttonClick($(this),'specifications')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="specifications_div">
+                            <ul id="specifications_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="package">
+                        <div class="has-feedback ">
+                            <i class="glyphicon glyphicon-lock form-control-feedback"  aria-hidden="true"></i>
+                            <div class="input_button row">
+                                <div class="aInput col-xs-10">
+                                    <input type="text"  id="package_input"  placeholder="包装" onclick="inputClick('package')">
+                                </div>
+                                <div id="package_button" class="aI col-xs-1" onclick="buttonClick($(this),'package')"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
+                        <div class="subMenu dropdown-menu" id="package_div">
+                            <ul id="package_ul" class="leftMenu">
+                            </ul>
+                        </div>
+                    </li>
+                    @*<li id="package">*@
+                        @*<div class=" has-feedback ">*@
+                            @*<i class="glyphicon glyphicon-lock form-control-feedback leftI"  aria-hidden="true"></i>*@
+                            @*<div class="input_button row">*@
+                                @*<div class="aInput col-xs-10">*@
+                                    @*<input type="text"  id="package_input"  placeholder="包装">*@
+                                @*</div>*@
+                                @*<div id="package_button" class="aI col-xs-1"><i  class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></div>*@
+                            @*</div>*@
+                        @*</div>*@
+                        @*<div class="subMenu" id="package_div">*@
+                            @*<ul id="package_ul" class="leftMenu">*@
+                            @*</ul>*@
+                        @*</div>*@
+                    @*</li>*@
+                </ul>
+                <div class="screen-box" id="screen_box"><!-- class="screen-box" -->
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><a id="reset" class="search-btn" onclick="reset()">重置</a></div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><a id="xssj" class="search-btn" onclick="showDig()">显示数据</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-10 col-md-10">
+            <div class="title row">
+                <h1>中国等级医院药品销售信息库</h1>
+            </div>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3" >
+                        <div class="chatbox">
+                            <div class="chat">
+                                <img src="@routes.Assets.at("images/scale.png")">
+                                <h5>市场规模:<span class="data-right" id="guim">X</span></h5>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 ">
+                        <div class="chatbox">
+                            <div class="chat">
+                                <img src="@routes.Assets.at("images/share.png")">
+                                <h5>市场增长率:<span class="data-right" id="zengzl">X</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 ">
+                        <div class="chatbox">
+                            <div class="chat">
+                                <img src="@routes.Assets.at("images/quantity.png")">
+                                <h5>市场份额:<span class="data-right" id="fene">X</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 ">
+                        <div class="chatbox">
+                            <div class="chat">
+                                <img src="@routes.Assets.at("images/percent.png")">
+                                <h5>产品数量:<span class="data-right" id="chanps">X</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="img row-fluid text-center">
+                    <img src="@routes.Assets.at("images/content1.png")" class="img-responsive img-thumbnail">
+                </div>
+                <div class="dataTable row">
+                    <div class="row entryReport">
+                        @*<div class="col-xs-offset-6 col-sm-offset-6 col-md-offset-9 col-lg-offset-10 col-xs-6 col-sm-6 col-md-3 col-lg-2"><a class="btn btn-success showReport" href="javascript:report()" target="_blank">显示报告</a></div>*@
+                        <div class="col-xs-offset-6 col-sm-offset-6 col-md-offset-9 col-lg-offset-10 col-xs-6 col-sm-6 col-md-3 col-lg-2"><a class="btn btn-success showReport" href="javascript:goSampleData()" target="_blank">显示样本数据</a></div>
+                    </div>
+                    <div class="container-fluid row">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <tr>
+                                    <th></th>
+                                    <th>时间</th>
+                                    <th>省份</th>
+                                    <th class="productTh">商品名</th>
+                                    <th>销售额(元)</th>
+                                    <th>销量(盒)</th>
+                                    <th class="oralTh">通用名</th>
+                                    <th class="manufactTh">厂家</th>
+                                    <th>规格</th>
+                                    <th>治疗I</th>
+                                    <th>治疗II</th>
+                                    <th>治疗III</th>
+                                    <th class="pacTh">最小产品单位</th>
+                                    <th>厂家类型</th>
+                                    <th>剂型</th>
+                                    <th>包装</th>
+                                </tr>
+                                <tbody id ="tbody"></tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-6 dataTables_info" id="pageinfo"></div>
+                                <div class="col-sm-6 text-right">
+                                    <ul id='pageview'></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+    </div>
+}{
+
+    <script src="@routes.Assets.at("js/bootstrap/bootstrap-datetimepicker.min.js")" ></script>
+    <script src="@routes.Assets.at("js/locales/bootstrap-datetimepicker.zh-CN.js")" ></script>
+    <script src="@routes.Assets.at("js/bootstrap/bootstrap-paginator.js")" ></script>
+    <script src="@routes.Assets.at("js/page.js")" ></script>
+    <script src="@routes.Assets.at("js/changes.js")"></script>
+    <script src="@routes.Assets.at("js/search.js")"></script>
+    <script src="@routes.Assets.at("js/login.js")"></script>
+}

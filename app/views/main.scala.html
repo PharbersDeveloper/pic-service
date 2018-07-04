@@ -1,0 +1,56 @@
+@(title: String)(include : Html)(content : Html)(scripts : Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="keywords" content="keywords">
+        <meta name="description" content="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+        <title>@title</title>
+        <link type="image/x-icon" rel="icon" href="@routes.Assets.at("images/pharbers.ico")"/>
+        <link type="image/x-icon" rel="bookmark" href="@routes.Assets.at("images/pharbers.ico")"/>
+        <link type="image/x-icon" rel="shortcut icon" href="@routes.Assets.at("images/pharbers.ico")"/>
+
+        <!--css-->
+        <link href="@routes.Assets.at("css/common.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/bootstrap/css/bootstrap.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/KendoUI/styles/kendo.common.min.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/KendoUI/styles/kendo.default.min.css")" rel="stylesheet">
+
+
+        <!--js-->
+        <script src="@routes.Assets.at("js/jquery-1.9.1.min.js")"></script>
+
+        @*<script src="@routes.Assets.at("js/common.js")"></script>*@
+        <script src="@routes.Assets.at("js/common2.js")"></script>
+        <script src="@routes.Assets.at("js/bootstrap/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.at("js/bootstrap/bootstrap-select.min.js")"></script>
+        <script src="@routes.Assets.at("js/bootstrap/bootstrap-datetimepicker.min.js")"></script>
+        <script src="@routes.Assets.at("js/jquery.cookie.js")"> </script>
+        <script src="@routes.Assets.at("js/util/md5.min.js")"></script>
+        <script src="@routes.Assets.at("js/util/thousands.js")"></script>
+
+        <!-- <script src="@routes.Assets.at("css/admin/bootstrap/plugins/fastclick/fastclick.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/js/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/plugins/fastclick/fastclick.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/dist/js/app.min.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/dist/js/demo.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/plugins/slimScroll/jquery.slimscroll.min.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/plugins/datatables/jquery.dataTables.min.js")"></script>
+        <script src="@routes.Assets.at("css/admin/bootstrap/plugins/datatables/dataTables.bootstrap.min.js")"></script> -->
+
+        @include
+
+    </head>
+    <body>
+        @content
+
+        @scripts
+    </body>
+</html>

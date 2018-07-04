@@ -1,0 +1,74 @@
+@main("PIC") {
+    <script src="@routes.Assets.at("js/bootstrap/bootstrap-paginator.js")" ></script>
+    <script src="@routes.Assets.at("js/page.js")" ></script>
+    <script>
+        $(function() {
+            pageResult(1)
+
+        })
+
+        var pageResult = function(skip) {
+            var data = JSON.stringify({
+                "token": "VsKcwqtyw7t2w6XCrTXCpMOST8KpJyUICMK/wqFLw7HDnsKSw7x6KMOTwpNawofChXHCr8O8wrt6E0dVwoHDl045w4ljwprCsQRrKMONUEXCosOaf8KrE07CjFMTwrkOSz7CmMKBwp9jw6FfEQbCkQPDlk3DuXJ9wpkZw7LCthZ3Sz0yTsO5w7vCncOLwo8xw6jCo8O/ZMOiw48UDMKfHmExIC9Qw4QdEsOhLCINSkoTRGZLKkXCpRXDuBjDqh7DvsKqHMKZNSHCj8ONI8OzRcKww5hYAsOBwoMLAUsfw7d3KsK3IMKBcB5gw73DrcOQwprCncK3dzDCjHPClGpxZRfCrMKlwoASw5vCn8OvHgrDngLDoyzCshw1wrnCtcKjYMK6bmglwpVbw6xvw7zDiMKiacKLOCItw67CmcO0wrjDulA7JsKiw4jDgMOVH8K5J2ILwrvDucOGcMOLwovDizjDg0ExwrfDvHnDtXHCiMO8wqHDusONw7XCt8KWSyUkQcKEJ8O/wobCm8Khw4cPw6LCtsK8ZsK7UMOiwoHDmsOXDMOrwpPDnSrDvkPDm1MZw7/CiMKDw7I0NcOsbcO4w43Ci8K8w5lOeTbDosOPwoYFKBM4wrINASMwwpLDicOiQT1qN8Oxw696w44TUcOqScKxZMO9w6EmVMKawqbDrMKnIMKZPwnCtcKzwobDgAPDvsO4b8ONEXtkD0Mew7HCpcOBwotfwpbCj8KhNRbChMKiwq9Aw6pFw63Duz0Ww6vCh8KGw7XDmA==",
+                "condition": {
+                    "oral_name": "阿托伐他汀",
+                    "skip": skip
+                }
+            });
+            $("#tbody").empty();
+            $.ajax({
+                type: "POST",
+                url: "/data/search",
+                dataType: "json",
+                cache: false,
+                data: data,
+                contentType: "application/json,charset=utf-8",
+                success: function (r) {
+                    if (r.status == "ok") {
+                        $.each(r.search_result, function(i, v){
+                            $("#tbody").append(v.html)
+                        })
+                        Page(r)
+                    }
+                }
+            });
+        }
+    </script>
+}{
+    <div class="container-fluid" id="grid">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>序号</th>
+                    <th>时间</th>
+                    <th>省份</th>
+                    <th>商品名</th>
+                    <th>销售额(元)</th>
+                    <th>销量(盒)</th>
+                    <th>通用名</th>
+                    <th>厂家</th>
+                    <th>规格</th>
+                    <th>治疗I</th>
+                    <th>治疗II</th>
+                    <th>治疗III</th>
+                    <th>最小产品单位</th>
+                    <th>厂家类型</th>
+                    <th>剂型</th>
+                    <th>包装</th>
+                </tr>
+                <tbody id ="tbody"></tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-6 dataTables_info" id="pageinfo"></div>
+                <div class="col-sm-6 text-right">
+                    <ul id='pageview'></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}{
+
+}

@@ -1,0 +1,51 @@
+
+@main("login"){
+    <!--loginCss-->
+    <link href="@routes.Assets.at("css/login/alongsty.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/login/ivory.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/login/login.css")" rel="stylesheet">
+    <script src="@routes.Assets.at("js/login.js")"> </script>
+}{
+    <div class=" height10"></div>
+    <div class=" width100">
+        <div class=" width100 aligncenter"><img src="@routes.Assets.at("images/logo3.png")" width="100" height="100" alt="法伯宏业(PHA)" /></div>
+        <div class=" w1024">
+            <!--<div class=" floatright"><a class="font16 cblue" href="login3_en.html">ENGLISH</a></div>-->
+        </div>
+        <div class=" height20"></div>
+        <div class=" height20" style="background:url(@routes.Assets.at("images/line1.png"))no-repeat center; margin: 0 auto;"></div>
+        <div class=" w1024" >
+            <div class="row">
+                <div class=" " style="width:400px; margin: 0 auto">
+                    <div class=" height20"></div>
+                    <div class=" width100">
+                        <div class=" width100 font24"><img src="@routes.Assets.at("images/icon_info.png")" width="36" height="36" alt="信息中心" style="vertical-align:middle;" /> 法伯信息中心 / <span style="color:#2ec7c9;">登录</span></div>
+                        <div class=" height20"></div>
+                        <div class=" width100">
+                            <input type="text" id="name"  placeholder="用户名" style="background:url(@routes.Assets.at("images/icon_user3.png")) no-repeat top left; padding-left:45px;" />
+                            <div class=" height10"></div>
+                            <input type="Password"  id="password" placeholder="密码" style="background:url(@routes.Assets.at("images/icon_pass3.png")) no-repeat top left; padding-left:45px;" />
+                            <div class=" height20"></div>
+                            <a href="#"><button id="sub" class=" skyblue" style="width:100%; height:50px;"><span class="font18">登录</span></button></a>
+                            <div class=" height10"></div>
+                            <!--无注册-->
+                            <!--<a href=""><button type="submit" style="width:100%; height:50px;"><span class="font18">注册</span></button></a>-->
+                        </div>
+                        <div class=" height20"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <div class=" height20"></div>
+        <div class=" width100 aligncenter color_graylow font14">Copyright：法伯宏业科技发展有限公司(Pharbers)</div>
+        <div class=" height20"></div>
+    </div>
+}{
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script type="text/javascript">
+            $.cookie("cip",returnCitySN["cip"]);
+            $.cookie("cname",returnCitySN["cname"]);
+    </script>
+}
